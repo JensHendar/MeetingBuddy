@@ -13,6 +13,10 @@
 <ion-content padding>
 
   <ion-item class="calendar-event" text-wrap *ngFor="let m of meetings" (click)="meetingDetails(m.meeting)">
+    <span class="user-status">
+      <img class="custom-icon" *ngIf="m.accepted === false" src="assets/icon/accept.png">
+      <img class="custom-icon" *ngIf="m.accepted === true" src="assets/icon/decline.png">
+    </span>
     <h3 class="title">{{ m.meeting.title }}</h3>
     <p class="description">{{ m.meeting.summary }}</p>
     <span class="time"><ion-icon name="clock"></ion-icon>{{ m.meeting?.time | date: 'yyyy-MM-dd HH:mm' }}</span>
