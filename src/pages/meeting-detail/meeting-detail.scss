@@ -5,6 +5,13 @@ ion-navbar {
 	.join {
 		color:#27AE60;
 	}
+	.bar-button {
+		img {
+			height: 26px;
+		    margin-left: 5px;
+		    margin-right: 5px;
+		}
+	}
 }
 ion-content {
 	ion-icon {
