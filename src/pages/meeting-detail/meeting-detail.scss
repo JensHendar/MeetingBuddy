@@ -6,7 +6,11 @@ ion-navbar {
 		color:#27AE60;
 	}
 }
-
+ion-content {
+	ion-icon {
+		color:#3498DB;
+	}
+}
 .place {
 	float:right;
 	ion-icon {
@@ -35,19 +39,26 @@ ion-navbar {
 				font-size:12px;
 				white-space: normal;
 				border-bottom:1px solid #cecece;
-				.yes-votes {
-					padding:3px;
-					float:right;
+				padding-bottom:10px;
+				.voting-button {;
+				    width: 46px;
+				    height: 32px;
+					padding:8px;
 					font-size:14px;
+					background:#3498DB;
+					color:#fff;
+				}
+				.yes-votes {
+					float:right;
 					ion-icon {
+						color:#fff;
 						margin-right:5px;
 					}
 				}
 				.no-votes {
-					padding:3px;
 					float:left;
-					font-size:14px;
 					ion-icon {
+						color:#fff;
 						margin-left:5px;
 					}
 				}

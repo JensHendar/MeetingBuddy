@@ -38,8 +38,8 @@
       <ion-item *ngFor="let a of agenda_points">
         <span class="length">{{ a.item.agenda_point.time }}<ion-icon name="clock"></ion-icon></span>
         <p>{{ a.item.agenda_point.body }}</p>
-        <span class="no-votes">{{ a.item.no_votes }}<ion-icon name="thumbs-down"></ion-icon></span>
-        <span class="yes-votes"><ion-icon name="thumbs-up"></ion-icon>{{ a.item.yes_votes }}</span>
+        <span class="voting-button no-votes">{{ a.item.no_votes }}<ion-icon name="thumbs-down"></ion-icon></span>
+        <span class="voting-button yes-votes"><ion-icon name="thumbs-up"></ion-icon>{{ a.item.yes_votes }}</span>
       </ion-item>
     </div>
     <div class="participants" *ngIf="segmentSelect === 'participants'">
