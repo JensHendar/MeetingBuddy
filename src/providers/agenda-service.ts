@@ -9,6 +9,7 @@ export class AgendaService {
 
   //Posts
   votePoint(meetingId, pointId, params) {
+  	console.log(params);
   	return this.api.post('meetings/' + meetingId + '/agenda_points/' + pointId + '/votes', params);
   }
 

@@ -45,11 +45,8 @@ export class MeetingDetail {
     );
   }
 
-  voteAgendaPoint(pointId, value) {
-    let params = {
-      vote: value
-    }
-    this.agendaService.votePoint(this.meeting.id, pointId, params).subscribe(
+  voteAgendaPoint(pointId, value: boolean) {
+    this.agendaService.votePoint(this.meeting.id, pointId, { "vote": value.toString() }).subscribe(
       res => {
         this.getMeetingDetails(this.meeting.id);
         console.log(res);
