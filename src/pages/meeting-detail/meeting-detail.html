@@ -4,10 +4,10 @@
     <ion-title>{{ meeting?.title }}</ion-title>
 
     <ion-buttons right>
-      <button class="decline" ion-button icon-only (click)="viewCtrl.dismiss()">
+      <button class="decline" ion-button icon-only (click)="answerMeeting(false)">
          <img class="custom-icon" src="assets/icon/decline.png">
       </button>
-      <button class="join" ion-button icon-only (click)="viewCtrl.dismiss()">
+      <button class="join" ion-button icon-only (click)="answerMeeting(true)">
          <img class="custom-icon" src="assets/icon/accept.png">
       </button>
     </ion-buttons>
@@ -35,16 +35,23 @@
     </ion-segment>
 
     <div class="agenda" *ngIf="segmentSelect === 'agenda'" padding>
+      <form class="agenda-form" [formGroup]="newAgendaPoint" (ngSubmit)="saveNewAgendaPoint(newAgendaPoint)">
+        <span>New Agenda point</span>
+        <ion-input type="text" formControlName="body" placeholder="Text"></ion-input>
+        <ion-input type="number" formControlName="time" placeholder="Time"></ion-input>
+        <button ion-button type="submit" [disabled]="!newAgendaPoint.valid">Save</button>
+      </form>
       <ion-item *ngFor="let a of agenda_points">
         <span class="length">{{ a.item.agenda_point.time }}<ion-icon name="clock"></ion-icon></span>
         <p>{{ a.item.agenda_point.body }}</p>
-        <span class="voting-button no-votes" (click)="voteAgendaPoint(a.item.agenda_point.id, false)">{{ a.item.no_votes }}<ion-icon name="thumbs-down"></ion-icon></span>
-        <span class="voting-button yes-votes" (click)="voteAgendaPoint(a.item.agenda_point.id, true)"><ion-icon name="thumbs-up"></ion-icon>{{ a.item.yes_votes }}</span>
+        <span class="voting-button no-votes" (click)="voteAgendaPoint(a.item.agenda_point.id, false)">{{ a.item.no_votes || 0 }}<ion-icon name="thumbs-down"></ion-icon></span>
+        <span class="voting-button yes-votes" (click)="voteAgendaPoint(a.item.agenda_point.id, true)"><ion-icon name="thumbs-up"></ion-icon>{{ a.item.yes_votes || 0 }}</span>
       </ion-item>
     </div>
     <div class="participants" *ngIf="segmentSelect === 'participants'">
       <ion-item *ngFor="let participant of participants">
         <p>{{ participant.first_name }} {{ participant.last_name }}</p>
+        <span class="role">{{ participant.role }}</span>
       </ion-item>
     </div>
 

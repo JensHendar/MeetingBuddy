@@ -18,7 +18,7 @@ export class PlanningService {
 
   //Posts
   answerMeeting(meetingId, answer) {
-  	return this.api.post('meeting/'+meetingId, answer);
+  	return this.api.post('meetings/'+meetingId+'/invites/', answer);
   }
 
   createMeeting(meetingInfo) {
@@ -28,7 +28,6 @@ export class PlanningService {
   cancelMeeting(meetingId, meetingInfo) {
   	return this.api.post('meeting/'+meetingId, meetingInfo);
   }
-
-  //meetings/4/agenda_points
+  //meetings/:meeting_id/invites/:id
 
 }

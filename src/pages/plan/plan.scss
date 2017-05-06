@@ -15,6 +15,14 @@
 	ion-icon {
 		color:#3498DB;
 	}
+	.user-status {
+		position:absolute;
+		right:5px;
+		top:5px;
+		img {
+			width:40px;
+		}
+	}
 	.time,
 	.place {
 		font-size:12px;
