@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create new meeting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<form class="meeting-form" [formGroup]="newMeeting" (ngSubmit)="saveNewMeeting(newMeeting)">
+	  <ion-item>
+	    <ion-label>Title</ion-label>
+	    <ion-input type="text" formControlName="title"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label>Summary</ion-label>
+	    <ion-input type="textarea" formControlName="summary"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label>Date</ion-label>
+	    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DDDD MMMM YYYY" formControlName="date"></ion-datetime>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label>Time</ion-label>
+	    <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" formControlName="time"></ion-datetime>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label>Length</ion-label>
+	    <ion-input type="text" formControlName="length"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label>Location</ion-label>
+	    <ion-input type="text" formControlName="location"></ion-input>
+	  </ion-item>
+	  <button ion-button type="submit" [disabled]="!newMeeting.valid">Submit</button>
+	</form>
+
+</ion-content>

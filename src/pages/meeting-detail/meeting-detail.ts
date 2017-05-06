@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PlanningService } from '../../providers/planning-service';
 
 @IonicPage()
 @Component({
@@ -9,14 +10,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MeetingDetail {
 
   meeting = null;
+  user = null;
+  agenda_points = [];
+  participants = [];
+  segmentSelect = 'agenda';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public planningService: PlanningService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MeetingDetail');
     this.meeting = this.navParams.get('meeting');
-    console.log(this.meeting);
+    this.getMeetingDetails(this.meeting.id);
+  }
+
+  getMeetingDetails(meetingId) {
+    this.planningService.getMeeting(meetingId).subscribe(
+      res => {
+        this.meeting = res.meeting;
+        this.user = res.user;
+        this.agenda_points = res.agenda_points
+        this.participants = res.participants;
+      },
+      err => {
+        console.log(err);
+      },
+      () => {}
+    );
   }
 
 }

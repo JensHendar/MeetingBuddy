@@ -1,3 +1,72 @@
-page-meeting-detail {
+ion-navbar {
+	.decline {
+		color:red;
+	}
+	.join {
+		color:green;
+	}
+}
 
+.place {
+	float:right;
+	ion-icon {
+		margin-left:5px;
+	}
+}
+.time,
+.user {
+	display:inline-block;
+	margin-bottom:5px;
+	ion-icon {
+		margin-right:5px;
+	}
+}
+.description {
+	text-align:left;
+	margin:20px 0 40px;
+}
+.agenda {
+	.item {
+		padding:0;
+		.item-inner {
+			padding-right: 0;
+			ion-label {
+				margin-right:0;
+				font-size:12px;
+				white-space: normal;
+				border-bottom:1px solid #cecece;
+				.yes-votes {
+					padding:3px;
+					float:right;
+					font-size:14px;
+					ion-icon {
+						margin-right:5px;
+					}
+				}
+				.no-votes {
+					padding:3px;
+					float:left;
+					font-size:14px;
+					ion-icon {
+						margin-left:5px;
+					}
+				}
+				.no-votes {
+					text-align:right;
+				}
+				.length {
+					position:absolute;
+					right:5px;
+					top:5px;
+					ion-icon {
+						margin-left:5px;
+					}
+				}
+				p {
+					padding:10px;
+				}
+			}
+		}
+	}
+	
 }

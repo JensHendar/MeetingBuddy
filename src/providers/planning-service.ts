@@ -14,7 +14,7 @@ export class PlanningService {
   }
 
   getMeeting(meetingId) {
-  	return this.api.get('meeting/'+meetingId);
+  	return this.api.get('meetings/'+meetingId);
   }
 
   //Posts
@@ -22,12 +22,14 @@ export class PlanningService {
   	return this.api.post('meeting/'+meetingId, answer);
   }
 
-  createMeeting(meetingId, meetingInfo) {
-  	return this.api.post('meeting/'+meetingId, meetingInfo);
+  createMeeting(meetingInfo) {
+  	return this.api.post('meetings', meetingInfo);
   }
 
   cancelMeeting(meetingId, meetingInfo) {
   	return this.api.post('meeting/'+meetingId, meetingInfo);
   }
+
+  //meetings/4/agenda_points
 
 }

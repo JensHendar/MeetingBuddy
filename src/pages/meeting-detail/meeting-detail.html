@@ -1,12 +1,54 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>meetingDetail</ion-title>
+    <ion-title>{{ meeting?.title }}</ion-title>
+
+    <ion-buttons right>
+      <button class="decline" ion-button icon-only (click)="viewCtrl.dismiss()">
+         <ion-icon name="close"></ion-icon>
+      </button>
+      <button class="join" ion-button icon-only (click)="viewCtrl.dismiss()">
+         <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <span class="time"><ion-icon name="clock"></ion-icon>{{ meeting?.time | date: 'yyyy-MM-dd HH:mm' }}</span>
+  <span class="place">{{ meeting?.location }}<ion-icon name="compass"></ion-icon></span>
+  <br>
+  <span class="user"><ion-icon name="person"></ion-icon>{{ user?.first_name }} {{ user?.last_name }}</span> 
+  <p class="description">{{ meeting?.summary }}</p>
+
+  <ion-card>
+
+    <ion-segment [(ngModel)]="segmentSelect" color="primary">
+      <ion-segment-button value="agenda">
+        Agenda
+      </ion-segment-button>
+      <ion-segment-button value="participants">
+        Participants
+      </ion-segment-button>
+    </ion-segment>
+
+    <div class="agenda" *ngIf="segmentSelect === 'agenda'" padding>
+      <ion-item *ngFor="let a of agenda_points">
+        <span class="length">{{ a.item.agenda_point.time }}<ion-icon name="clock"></ion-icon></span>
+        <p>{{ a.item.agenda_point.body }}</p>
+        <span class="no-votes">{{ a.item.no_votes }}<ion-icon name="thumbs-down"></ion-icon></span>
+        <span class="yes-votes"><ion-icon name="thumbs-up"></ion-icon>{{ a.item.yes_votes }}</span>
+      </ion-item>
+    </div>
+    <div class="participants" *ngIf="segmentSelect === 'participants'">
+      <ion-item *ngFor="let participants of participants">
+        {{ participant.name }}
+      </ion-item>
+    </div>
+
+  </ion-card>
+
 
 </ion-content>

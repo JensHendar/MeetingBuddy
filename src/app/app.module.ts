@@ -9,6 +9,7 @@ import { PlanPage } from '../pages/plan/plan';
 import { MeetPage } from '../pages/meet/meet';
 import { AnalyzePage } from '../pages/analyze/analyze';
 import { MeetingDetail } from '../pages/meeting-detail/meeting-detail';
+import { CreateMeeting } from '../pages/create-meeting/create-meeting';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,6 +26,7 @@ import { PlanningService } from '../providers/planning-service';
     MeetPage,
     AnalyzePage,
     MeetingDetail,
+    CreateMeeting,
     TabsPage
   ],
   imports: [
@@ -40,6 +42,7 @@ import { PlanningService } from '../providers/planning-service';
     MeetPage,
     AnalyzePage,
     MeetingDetail,
+    CreateMeeting,
     TabsPage
   ],
   providers: [
