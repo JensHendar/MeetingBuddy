@@ -3,11 +3,19 @@
 
 	.title {
 		font-weight:bold;
+		text-decoration:underline;
 	}
 	.description {
 		height:50px;
 		margin:10px 0;
 		overflow:hidden;
+	}
+	ion-icon {
+		color:#3498DB;
+	}
+	.time,
+	.place {
+		font-size:12px;
 	}
 	.time {
 		float:left;

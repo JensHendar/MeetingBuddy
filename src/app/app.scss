@@ -14,3 +14,43 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-navbar {
+	ion-title {
+		img {
+			max-height:40px;
+		}
+	}
+}
+.toolbar {
+	.toolbar-title {
+		padding-top:2px;
+		font-size:14px;
+		color:#fff;
+	}
+}
+.toolbar-background,
+.tabs > .tabbar {
+	background:#3498DB;
+	color:#fff;
+}
+.tabs-md .tab-button-icon,
+.tabs-ios .tab-button-icon,
+.tabs-md .tab-button,
+.tabs-ios .tab-button {
+	color:#454545;
+}
+.tabs-md .tab-button[aria-selected=true],
+.tabs-ios .tab-button[aria-selected=true] {
+	color:#fff;
+	.tab-button-icon {
+		color:#fff;
+	}
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default,
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+	color:#fff;
+}
+.button-ios,
+.button-md {
+	background:#3498DB;
+}
