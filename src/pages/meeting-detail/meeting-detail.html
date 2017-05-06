@@ -43,8 +43,8 @@
       </ion-item>
     </div>
     <div class="participants" *ngIf="segmentSelect === 'participants'">
-      <ion-item *ngFor="let participants of participants">
-        {{ participant.name }}
+      <ion-item *ngFor="let participant of participants">
+        <p>{{ participant.first_name }} {{ participant.last_name }}</p>
       </ion-item>
     </div>
 
