@@ -1,3 +1,24 @@
-page-plan {
+.calendar-event {
+	margin-bottom: 20px;
 
+	.title {
+		font-weight:bold;
+	}
+	.description {
+		height:50px;
+		margin:10px 0;
+		overflow:hidden;
+	}
+	.time {
+		float:left;
+		ion-icon {
+			margin-right:5px;
+		}
+	}
+	.place {
+		float:right;
+		ion-icon {
+			margin-left:5px;
+		}
+	}
 }

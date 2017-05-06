@@ -8,6 +8,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { PlanPage } from '../pages/plan/plan';
 import { MeetPage } from '../pages/meet/meet';
 import { AnalyzePage } from '../pages/analyze/analyze';
+import { MeetingDetail } from '../pages/meeting-detail/meeting-detail';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,6 +24,7 @@ import { PlanningService } from '../providers/planning-service';
     PlanPage,
     MeetPage,
     AnalyzePage,
+    MeetingDetail,
     TabsPage
   ],
   imports: [
@@ -37,6 +39,7 @@ import { PlanningService } from '../providers/planning-service';
     PlanPage,
     MeetPage,
     AnalyzePage,
+    MeetingDetail,
     TabsPage
   ],
   providers: [

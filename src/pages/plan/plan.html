@@ -12,9 +12,11 @@
 
 <ion-content padding>
 
-  <ion-item text-wrap>
-    Multiline text that should wrap when it is too long
-    to fit on one line in the item.
+  <ion-item class="calendar-event" text-wrap *ngFor="let meeting of meetings" (click)="meetingDetails(meeting)">
+    <h3 class="title">{{ meeting.title }}</h3>
+    <p class="description">{{ meeting.summary }}</p>
+    <span class="time"><ion-icon name="clock"></ion-icon>{{ meeting.time | date: 'yyyyMMdd' }}</span>
+    <span class="place">{{ meeting.location }}<ion-icon name="compass"></ion-icon></span>
   </ion-item>
 
 </ion-content>
