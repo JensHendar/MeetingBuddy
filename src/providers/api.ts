@@ -1,26 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { IonicStorageModule } from '@ionic/storage';
 
 @Injectable()
 export class Api {
-  api_url = '';
+  api_url = 'https://meetingbuddy.herokuapp.com/';
 
-  constructor(public http: Http, storage: Storage) {
-    storage.ready().then(() => {
-      storage.get('age').then((val) => {
-        this.api_url = val;
-      });
-    });
+  constructor(public http: Http) {
   }
 
   public get(route) {
-  	return this.http.get(this.api_url+route);
+    return this.http.get(this.api_url+route).map(res => res.json());
   }
 
   public post(route, params) {
-    return this.http.post(this.api_url+route,params);
+    return this.http.post(this.api_url+route,params).map(res => res.json());
   }
 
 }
