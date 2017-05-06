@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //Services
 import { Api } from '../providers/api';
 import { PlanningService } from '../providers/planning-service';
+import { AgendaService } from '../providers/agenda-service';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PlanningService } from '../providers/planning-service';
     SplashScreen,
     Api,
     PlanningService,
+    AgendaService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

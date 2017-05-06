@@ -54,3 +54,31 @@ ion-navbar {
 .button-md {
 	background:#3498DB;
 }
+.segment-md-primary .segment-button.activated, .segment-md-primary .segment-button.segment-activated {
+	border-bottom:1px solid #666;
+}
+.segment-ios-primary .segment-button {
+	border-color:#666;
+	color:#666;
+	border-radius:0;
+	.segment-button.segment-activated {
+		background-color:#666;
+	}
+}
+.segment-md-primary .segment-button.activated, .segment-md-primary .segment-button.segment-activated {
+	color:#fff;
+	border-color:#666;
+	background-color:#666;
+}
+.segment-md-primary .segment-button {
+	color:#666;
+	border-radius:0;
+}
+.segment-ios-primary .segment-button.segment-activated {
+	background-color: #666;
+	border-radius:0;
+}
+.segment-ios .segment-button:last-of-type,
+.segment-ios .segment-button:first-of-type {
+	border-radius:0;
+}

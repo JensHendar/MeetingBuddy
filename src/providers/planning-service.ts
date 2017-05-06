@@ -4,8 +4,7 @@ import { Api } from './api';
 @Injectable()
 export class PlanningService {
 
-  constructor(public api: Api) { 
-    console.log('Hello PlanningService Provider');
+  constructor(public api: Api) {
   }
 
   //Gets
