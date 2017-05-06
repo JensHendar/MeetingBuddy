@@ -1,3 +1,12 @@
-page-meet {
+.agenda-points {
+	font-size:12px;
+	background:transparent;
+	&.focused {
+		font-weight:bold;
+		background:#3498DB;
+	}
+}
 
+.list-md .item-block .item-inner {
+	border-bottom:0;
 }

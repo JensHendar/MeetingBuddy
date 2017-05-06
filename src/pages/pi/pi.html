@@ -1,7 +1,10 @@
 <ion-header>
 
-</ion-header>
+  <ion-navbar>
+     <ion-title><img src="assets/icon/menu_logo.png"></ion-title>
+  </ion-navbar>
 
+</ion-header>
 
 <ion-content padding>
   <h1>
@@ -9,7 +12,7 @@
   </h1>
 
   <ion-list>
-    <ion-item *ngFor="let item of agendaItems">
+    <ion-item class="agenda-points" *ngFor="let item of agendaItems" [class.focused]="item.item.agenda_point.id === focusedPoint">
 
       {{ item.item.agenda_point.body }}
       <span>

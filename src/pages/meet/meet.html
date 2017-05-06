@@ -9,4 +9,16 @@
 
 <ion-content padding>
 
+	<ion-list>
+	    <ion-item class="agenda-points" *ngFor="let item of agendaItems" [class.focused]="item.item.agenda_point.id === focusedPoint">
+
+	      {{ item.item.agenda_point.body }}
+	      <span>
+	        {{ item.item.agenda_point.time }}
+	      </span>
+	    </ion-item>
+	  </ion-list>
+
+	  <button ion-button round (click)="startMeeting()">Start Meeting</button>
+
 </ion-content>

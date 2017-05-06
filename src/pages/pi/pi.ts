@@ -33,23 +33,23 @@ export class PiPage {
         no_votes: 1
       }
     },
-{
-  item: {
-    agenda_point: {
-      id: 19,
-      user_id: 16,
-      meeting_id: 21,
-      body: "More donuts for the hack.",
-      time: 10,
-      created_at: "2017-05-06T13:34:38.583Z",
-      updated_at: "2017-05-06T13:34:38.583Z"
-    }
-  }
-},
     {
       item: {
         agenda_point: {
           id: 19,
+          user_id: 16,
+          meeting_id: 21,
+          body: "More donuts for the hack.",
+          time: 10,
+          created_at: "2017-05-06T13:34:38.583Z",
+          updated_at: "2017-05-06T13:34:38.583Z"
+        }
+      }
+    },
+    {
+      item: {
+        agenda_point: {
+          id: 20,
           user_id: 16,
           meeting_id: 21,
           body: "More donuts for the hack.",
@@ -59,28 +59,28 @@ export class PiPage {
         }
       }
     }
-]
+  ]
+  agendaCounter = 1;
+  focusedPoint = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
 
   startMeeting() {
-    console.log("StartMeeting");
-    console.log(this.agendaItems);
-      this.setFocus(0);
-      setTimeout(this.nextAgendaPoint, this.agendaItems[0].item.agenda_point.time*10);
+    this.focusedPoint = this.agendaItems[0].item.agenda_point.id;
+    setTimeout(()=>{
+      this.nextAgendaPoint();
+    }, this.agendaItems[0].item.agenda_point.time*1000);
   }
-  agendaCounter = 0;
 
   nextAgendaPoint() {
-    console.log("NEXT ONE");
-    console.log(this.agendaItems);
     if (this.agendaCounter < this.agendaItems.length) {
-      console.log("counter++");
+      this.focusedPoint = this.agendaItems[this.agendaCounter].item.agenda_point.id;
+      setTimeout(()=>{
+        this.nextAgendaPoint();
+      }, this.agendaItems[this.agendaCounter].item.agenda_point.time * 1000);
       this.agendaCounter++;
-      this.setFocus(this.agendaCounter);
-      setTimeout(this.nextAgendaPoint, this.agendaItems[this.agendaCounter].item.agenda_point.time * 10);
     } else {
       this.agendaCounter = 0;
       console.log("FINISHED");
@@ -88,12 +88,7 @@ export class PiPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Pi');
     this.meeting = this.navParams.get('meeting');
-    console.log(this.meeting);
   }
 
-  private setFocus(agendaCounter: number) {
-    console.log(this.agendaItems[agendaCounter].item.agenda_point.body + "is current agendaPoint");
-  }
 }
