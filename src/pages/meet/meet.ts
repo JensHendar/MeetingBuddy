@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {PiPage} from "../pi/pi";
 
 /**
  * Generated class for the Meet page.
@@ -17,8 +18,11 @@ export class MeetPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  piPage = PiPage;
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad Meet');
+    this.navCtrl.push(this.piPage);
   }
 
 }
