@@ -1,0 +1,25 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1>
+    Agenda:
+  </h1>
+
+  <ion-list>
+    <ion-item *ngFor="let item of agendaItems">
+
+      {{ item.item.agenda_point.body }}
+      <span>
+        {{ item.item.agenda_point.time }}
+      </span>
+      <span>
+      </span>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round (click)="startMeeting()">Start Meeting</button>
+
+</ion-content>
